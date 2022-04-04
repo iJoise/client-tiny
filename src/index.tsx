@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Listing } from './sections/Listings';
+import { Listings } from './sections/Listings';
 
-ReactDOM.render(<Listing title="TinyHouse" />, document.getElementById('root'));
+ReactDOM.render(<Listings title="TinyHouse" />, document.getElementById('root'));
