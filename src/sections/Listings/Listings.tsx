@@ -1,12 +1,13 @@
+import { gql, useMutation, useQuery } from '@apollo/client';
 import React, { FC } from 'react';
-import { useMutation, useQuery } from '../../lib/api';
-import { DeleteListingData, DeleteListingVariables, ListingsData } from './types';
+import { Listings as ListingsData} from './__generated__/Listings'
+import { DeleteListing as DeleteListingData, DeleteListingVariables} from './__generated__/DeleteListing'
 
 type ListingPropsType = {
   title: string;
 };
 
-const LISTINGS = `
+const LISTINGS = gql`
   query Listings {
     listings {
       id
@@ -22,7 +23,7 @@ const LISTINGS = `
   }
 `;
 
-const DELETE_LISTING = `
+const DELETE_LISTING = gql`
   mutation DeleteListing($id: ID!) {
     deleteListing(id: $id) {
       id
@@ -36,7 +37,7 @@ export const Listings: FC<ListingPropsType> = ({ title }) => {
     useMutation<DeleteListingData, DeleteListingVariables>(DELETE_LISTING);
 
   const handleDeleteListing = async (id: string) => {
-    await deleteListing({ id });
+    await deleteListing({ variables: { id } });
     refetch();
   };
 
