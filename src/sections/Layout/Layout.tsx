@@ -1,17 +1,11 @@
-import React from "react";
-import s from "./style/Layout.module.scss";
+import React from 'react';
+import { Layout as LayoutAnt } from 'antd';
 import { Outlet } from 'react-router-dom';
 
-type LayoutPropsType = {
-
-}
-
-
-export const Layout: React.FC<LayoutPropsType> = ({}) => {
-
-   return (
-      <div>
-        <Outlet/>
-      </div>
-   )
-}
+export const Layout = () => {
+  return (
+    <LayoutAnt id="app">
+      <Outlet />
+    </LayoutAnt>
+  );
+};

@@ -10,6 +10,7 @@ import { Listing } from './sections/Listing';
 import { User } from './sections/User';
 import { NotFound } from './sections/NotFound';
 import { Layout } from './sections/Layout';
+import { Login } from './sections/Login';
 
 const client = new ApolloClient({
   uri: '/api',
@@ -19,9 +20,10 @@ const client = new ApolloClient({
 const App = () => {
   return (
     <Routes>
-      <Route path='/' element={<Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="host" element={<Host />} />
+        <Route path="login" element={<Login />} />
         <Route path="listing/:id" element={<Listing />} />
         <Route path="listings/" element={<Listings title="TinyHouse" />} />
         <Route path="listings/:location" element={<Listings title="TinyHouse" />} />

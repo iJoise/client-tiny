@@ -19,12 +19,6 @@ const LISTINGS = gql`
       id
       title
       image
-      address
-      price
-      numOfGuests
-      numOfBeds
-      numOfBaths
-      rating
     }
   }
 `;
