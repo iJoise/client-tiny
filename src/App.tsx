@@ -1,5 +1,5 @@
 import { Viewer } from './lib/types';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './sections/Layout';
 import { Home } from './sections/Home';
@@ -9,6 +9,12 @@ import { Listing } from './sections/Listing';
 import { Listings } from './sections/Listings';
 import { User } from './sections/User';
 import { NotFound } from './sections/NotFound';
+import { useMutation } from '@apollo/client';
+import { LOG_IN } from './lib/graphql/mutations/LogIn';
+import {
+  LogIn as LogInData,
+  LogInVariables,
+} from './lib/graphql/mutations/LogIn/__generated__/LogIn';
 
 const initialViewer: Viewer = {
   id: null,
@@ -19,10 +25,22 @@ const initialViewer: Viewer = {
 };
 export const App = () => {
   const [viewer, setViewer] = useState(initialViewer);
+  const [logIn, { error }] = useMutation<LogInData, LogInVariables>(LOG_IN, {
+    onCompleted: data => {
+      if (data && data.logIn) {
+        setViewer(data.logIn);
+      }
+    },
+  });
+  const logInRef = useRef(logIn);
+
+  useEffect(() => {
+    logInRef.current();
+  }, []);
 
   return (
     <Routes>
-      <Route path="/" element={<Layout viewer={viewer} setViewer={setViewer} />}>
+      <Route path="/" element={<Layout viewer={viewer} setViewer={setViewer} error={error} />}>
         <Route index element={<Home />} />
         <Route path="host" element={<Host />} />
         <Route path="login" element={<Login setViewer={setViewer} />} />

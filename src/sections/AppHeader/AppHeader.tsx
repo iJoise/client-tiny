@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './assets/tinyhouse-logo.png';
-import { Header } from 'antd/es/layout/layout';
+import logo from '../../assets/logo/tinyhouse-logo.png';
+import { Layout } from 'antd';
 import { Link } from 'react-router-dom';
 import { MenuItems } from './components/MenuItems';
 import { Viewer } from '../../lib/types';
@@ -9,6 +9,8 @@ interface AppHeaderProps {
   viewer: Viewer;
   setViewer: (viewer: Viewer) => void;
 }
+
+const { Header } = Layout;
 
 export const AppHeader = ({ viewer, setViewer }: AppHeaderProps) => {
   return (
@@ -21,7 +23,7 @@ export const AppHeader = ({ viewer, setViewer }: AppHeaderProps) => {
         </div>
       </div>
       <div className="app-header__menu-section">
-        <MenuItems viewer={viewer} setViewer={setViewer}/>
+        <MenuItems viewer={viewer} setViewer={setViewer} />
       </div>
     </Header>
   );
