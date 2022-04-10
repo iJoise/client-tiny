@@ -1,16 +1,5 @@
-import React, { FC } from 'react';
-import s from "./style/NotFound.module.scss";
+import React from 'react';
 
-type NotFoundPropsType = {
-
-}
-
-
-export const NotFound: FC<NotFoundPropsType> = ({}) => {
-
-   return (
-      <div>
-         NotFound
-      </div>
-   )
-}
+export const NotFound = () => {
+  return <div>NotFound</div>;
+};

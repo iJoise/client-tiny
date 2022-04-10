@@ -1,16 +1,13 @@
-import React, { FC } from 'react';
-import s from "./style/User.module.scss";
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-type UserPropsType = {
+export const User = () => {
+  const { id } = useParams<{ id: string }>();
 
-}
-
-
-export const User: FC<UserPropsType> = ({}) => {
-
-   return (
-      <div>
-         User
-      </div>
-   )
-}
+  return (
+    <div>
+      User
+      {JSON.stringify(id)}
+    </div>
+  );
+};

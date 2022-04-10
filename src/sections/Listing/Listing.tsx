@@ -1,16 +1,5 @@
-import React, { FC } from 'react';
-import s from "./style/Listing.module.scss";
+import React from 'react';
 
-type ListingPropsType = {
-
-}
-
-
-export const Listing: FC<ListingPropsType> = ({}) => {
-
-   return (
-      <div>
-         Listing
-      </div>
-   )
-}
+export const Listing = () => {
+  return <div>Listing</div>;
+};

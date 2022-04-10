@@ -46,6 +46,7 @@
 }
 .app-header__menu-section {
    float: right;
+   min-width: 250px;
 }
 .app-header-skeleton {
    display: flex;
@@ -81,7 +82,7 @@
 }
 .error-banner {
    position: fixed;
-   width: 100%;
+   max-width: 450px;
    top: 64px;
    left: 0;
    z-index: 99;
@@ -205,7 +206,7 @@
 }
 .home {
    padding: 60px 120px;
-   background-image: url(../static/media/map-background.jpg);
+   background-image: url(../assets/map-background.jpg);
    background-repeat: no-repeat;
    background-position: 10% 0;
 }
@@ -651,4 +652,9 @@ html {
    .app__affix-footer {
       display: none;
    }
+}
+
+.icon {
+   padding-right: 10px;
+   transition: color 0s !important;
 }
