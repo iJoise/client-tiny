@@ -1,16 +1,16 @@
 import React from 'react';
 import logo from '../../assets/logo/tinyhouse-logo.png';
-import { Layout } from 'antd';
 import { Link } from 'react-router-dom';
 import { MenuItems } from './components/MenuItems';
 import { Viewer } from '../../lib/types';
+import { Layout } from 'antd'
 
 interface AppHeaderProps {
   viewer: Viewer;
   setViewer: (viewer: Viewer) => void;
 }
 
-const { Header } = Layout;
+const {Header} = Layout
 
 export const AppHeader = ({ viewer, setViewer }: AppHeaderProps) => {
   return (

@@ -45,14 +45,17 @@ export const App = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Layout viewer={viewer} setViewer={setViewer} error={error} />}>
+      <Route
+        path="/"
+        element={<Layout viewer={viewer} setViewer={setViewer} error={error} />}
+      >
         <Route index element={<Home />} />
         <Route path="host" element={<Host />} />
         <Route path="login" element={<Login setViewer={setViewer} />} />
         <Route path="listing/:id" element={<Listing />} />
         <Route path="listings/" element={<Listings />} />
         <Route path="listings/:location" element={<Listings />} />
-        <Route path="user/:id" element={<User />} />
+        <Route path="user/:id" element={<User viewer={viewer} />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

@@ -655,6 +655,6 @@ html {
 }
 
 .icon {
-   padding-right: 10px;
+   padding-right: 10px !important;
    transition: color 0s !important;
 }
