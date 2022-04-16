@@ -206,7 +206,7 @@
 }
 .home {
    padding: 60px 120px;
-   background-image: url(../assets/map-background.jpg);
+   background-image: url(../assets/home/map-background.jpg);
    background-repeat: no-repeat;
    background-position: 10% 0;
 }

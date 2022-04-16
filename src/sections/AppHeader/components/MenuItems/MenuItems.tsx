@@ -9,6 +9,7 @@ import { LogOut as LogOutData } from '../../../../lib/graphql/mutations/LogOut/_
 import {
   displayErrorMessage,
   displaySuccessNotification,
+  iconColor,
 } from '../../../../lib/components/utils';
 
 interface MenuItemsProps {
@@ -41,12 +42,12 @@ export const MenuItems = ({ viewer, setViewer }: MenuItemsProps) => {
       <SubMenu title={<Avatar src={viewer.avatar} />} key="/sub">
         <Item key="/user">
           <Link to={`/user/${viewer.id}`}>
-            <UserOutlined className="icon" />
+            <UserOutlined className="icon" style={{ color: iconColor }} />
             Profile
           </Link>
         </Item>
         <Item key="/logout" onClick={handleLogOut}>
-          <LoginOutlined className="icon" />
+          <LoginOutlined className="icon" style={{ color: iconColor }} />
           Log out
         </Item>
       </SubMenu>
@@ -62,7 +63,7 @@ export const MenuItems = ({ viewer, setViewer }: MenuItemsProps) => {
     <Menu mode="horizontal" selectable={false} className="menu" key="/menu">
       <Item key="/host">
         <Link to="/host">
-          <HomeOutlined className="icon" />
+          <HomeOutlined className="icon" style={{ color: iconColor }} />
           Host
         </Link>
       </Item>

@@ -24,7 +24,7 @@ export const ListingBookings = ({
   const listingBookingsList = (
     <List
       grid={{
-        gutter: 16,
+        gutter: 8,
         xs: 1,
         sm: 2,
         md: 2,
